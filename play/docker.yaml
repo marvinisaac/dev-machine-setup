@@ -20,4 +20,4 @@
         update_cache: true
 
     - name: Run commands without "sudo"
-      command: "usermod -aG docker {{ user }}"
+      command: "usermod -aG docker $USER"

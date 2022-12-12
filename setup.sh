@@ -5,4 +5,5 @@ sudo apt install software-properties-common
 sudo add-apt-repository --yes --update ppa:ansible/ansible
 sudo apt install ansible --yes
 
-ansible-playbook ./playbook.yaml -K
+ansible-playbook ./playbook.yaml -K \
+    -e "target=localhost"
