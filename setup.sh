@@ -7,3 +7,6 @@ sudo apt install ansible --yes
 
 ansible-playbook ./playbook.yaml -K \
     -e "target=localhost"
+
+sudo usermod -aG docker $USER
+newgrp docker

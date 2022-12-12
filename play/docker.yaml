@@ -18,6 +18,3 @@
         name: docker-ce
         state: latest
         update_cache: true
-
-    - name: Run commands without "sudo"
-      command: "usermod -aG docker $USER"
