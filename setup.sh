@@ -12,10 +12,9 @@ cp ~/.ssh/key ~/.ssh/gpg-key && \
     echo $(tr -d '\n' < ~/.ssh/gpg-key) > ~/.ssh/gpg-key
 
 ssh -T github.com
-sleep 3
 
 # Install Ansible
-sudo apt update
+sudo apt update --yes
 sudo apt install software-properties-common
 sudo add-apt-repository --yes --update ppa:ansible/ansible
 sudo apt install ansible --yes
@@ -27,9 +26,12 @@ ansible-playbook ./playbook.yaml -K \
     -e "target=localhost \
         gateway=$DEV_IP_GATEWAY \
         interface=$DEV_IP_INTERFACE \
-        ip=$DEV_IP_ADDRESSS \
+        ip=$DEV_IP_ADDRESS \
     "
 
 # Run docker commands without sudo
 sudo usermod -aG docker $USER
 newgrp docker
+
+git config --global user.name "Marvin Isaac"
+git config --global user.email "4396841+marvinisaac@users.noreply.github.com"
