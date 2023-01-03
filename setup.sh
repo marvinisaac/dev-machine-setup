@@ -1,5 +1,20 @@
 #! /bin/bash
 
+# Decrypt key
+gpg ./key/key.gpg
+
+mv ./key/key ~/.ssh/key
+chmod 700 ~/.ssh/key
+cp ./key/ssh-config ~/.ssh/config
+
+# Create a single line version to be used as symmetric encryption key in the future
+cp ~/.ssh/key ~/.ssh/gpg-key && \
+    echo $(tr -d '\n' < ~/.ssh/gpg-key) > ~/.ssh/gpg-key
+
+ssh -T github.com
+sleep 3
+
+# Install Ansible
 sudo apt update
 sudo apt install software-properties-common
 sudo add-apt-repository --yes --update ppa:ansible/ansible
