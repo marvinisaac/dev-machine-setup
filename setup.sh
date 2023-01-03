@@ -1,7 +1,9 @@
 #! /bin/bash
 
-# Decrypt key
-gpg ./key/key.gpg
+# Try to decrypt key, exit on failure
+gpg ./key/key.gpg 2>/dev/null || {
+    echo "> Wrong passphrase" && exit
+}
 
 mv ./key/key ~/.ssh/key
 chmod 700 ~/.ssh/key

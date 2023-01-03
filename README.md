@@ -11,4 +11,5 @@ An Ansible-based setup for Ubuntu Server
         - Proxmox + Ubuntu: `ens18`
         - VirtualBox + Ubuntu: `enp0s3`
 4. Start setup with `bash setup.sh`
+    > Hint: 46 Wong DVD's for you
 5. Reboot machine
