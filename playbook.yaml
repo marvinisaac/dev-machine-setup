@@ -6,3 +6,4 @@
 - import_playbook: "./play/docker-compose.yaml"
 - import_playbook: "./play/php.yaml"
 - import_playbook: "./play/node.yaml"
+- import_playbook: "./play/apache.yaml"
