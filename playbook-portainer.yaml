@@ -1,0 +1,5 @@
+- import_playbook: "./play/hostname-portainer.yaml"
+- import_playbook: "./play/disk.yaml"
+- import_playbook: "./play/ubuntu-updates.yaml"
+- import_playbook: "./play/docker.yaml"
+- import_playbook: "./play/docker-compose.yaml"
